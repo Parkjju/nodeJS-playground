@@ -1,10 +1,13 @@
 import express from 'express';
+import {
+    handleHome,
+    handleTest,
+    handleTestRemove,
+} from '../controllers/userControllers';
 
 const globalRouter = express.Router();
 
-const handleHome = (req, res) => {
-    return res.send('Hello!');
-};
 globalRouter.get('/', handleHome);
-
+globalRouter.get('/test', handleTest);
+globalRouter.get('/remove', handleTestRemove);
 export default globalRouter;
